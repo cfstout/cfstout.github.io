@@ -5,8 +5,8 @@ date:   2019-10-03 10:23:57 -0600
 ---
 
 I enjoy giving code reviews, as I think it’s one of the best ways to learn and teach in our industry. I know that you may not feel quite the same, so I’m including a decoding guide so you (hopefully) have a clear sense of my intention behind any comments, and know exactly which require action. 
-Decoding my comments:
 
+Decoding my comments:
 * `JPT`/`KPT` prefixed messages are for java/kotlin protips. Functionally the same code, but just some tips and tricks I’ve picked up over the years of ways to write clean, maintainable code. Often this guidance is lifted from the pages of [Effective Java](https://www.amazon.com/Effective-Java-Joshua-Bloch/dp/0134685997) my java bible. I put them here to help teach, but feel free to ignore if you prefer. I’m also happy to discus the merits of my suggestion offline, just ping me!
 * `PQ` prefixed messages are my personal questions. I want to learn from things you’ve written so these are simply for my knowledge and understanding. I’d love a comment with your answer or feel free to follow up offline, but it’s not the highest priority, so also feel free to ignore if you’re busy and in a hurry.
 * `NIT` prefixed messages are for the small little details I notice. I’d prefer them to be fixed if you’re already in the code responding to other comments, but if not, no sweat, feel free to :shipit:
