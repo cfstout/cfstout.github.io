@@ -27,7 +27,6 @@ url: "https://cfstout.github.io"
 github_username:  cfstout
 
 # Build settings
-theme: none
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
