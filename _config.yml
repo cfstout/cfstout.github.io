@@ -8,6 +8,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://cfstout.github.io"
 github_username:  cfstout
 linkedin_username: clayton-stout-91098666
+location: "Missoula, Montana"
 
 # Build settings
 plugins:
@@ -29,16 +30,19 @@ defaults:
     values:
       layout: "post"
       comments: false
+      disabled: false
   - scope:
       path: ""
       type: "projects"
     values:
       layout: "project"
+      disabled: false
   - scope:
       path: ""
       type: "pages"
     values:
       layout: "default"
+      disabled: false
 
 highlighter: rouge
 

@@ -9,6 +9,7 @@ technologies: [Kotlin, Ktor, PostgreSQL, Exposed ORM]
 github_url: https://github.com/cfstout/workout-tracker
 demo_url: https://workout-tracker-demo.com
 year: 2023
+disabled: true
 ---
 
 ## Project Overview

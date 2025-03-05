@@ -16,7 +16,8 @@ permalink: /blog/
         <div class="blog-filters">
             <span class="filter-label">Filter by:</span>
             <div class="category-filters">
-                {% assign categories = site.posts | map: "categories" | compact | uniq | sort %}
+                {% assign visible_posts = site.posts | where_exp: "post", "post.disabled != true" %}
+                {% assign categories = visible_posts | map: "categories" | compact | uniq | sort %}
                 <button class="filter-btn active" data-filter="all">All</button>
                 {% for category in categories %}
                 <button class="filter-btn" data-filter="{{ category | slugify }}">{{ category }}</button>
@@ -25,7 +26,7 @@ permalink: /blog/
         </div>
 
         <div class="posts-grid">
-            {% for post in site.posts %}
+            {% for post in visible_posts %}
             <div class="post-item" data-categories="{{ post.categories | join: ' ' | downcase }}">
                 {% include post-card.html post=post %}
             </div>

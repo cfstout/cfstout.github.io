@@ -4,6 +4,7 @@ title: "Kotlin Coroutines vs Java Virtual Threads: A Practical Comparison"
 date: 2025-02-15
 categories: [JVM, Concurrency]
 excerpt: A comparative analysis of modern JVM concurrency models with real-world benchmarks and code examples.
+disabled: true
 ---
 
 Over the past few years, the JVM ecosystem has seen significant advancements in concurrency models. Two standout technologies have emerged: **Kotlin Coroutines** and **Java Virtual Threads** (Project Loom). As someone who works extensively with both Kotlin and Java, I've had the opportunity to implement and benchmark these technologies in production systems.

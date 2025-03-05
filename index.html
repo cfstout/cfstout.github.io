@@ -7,7 +7,8 @@ title: Home
     <div class="container">
         <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
-            {% for project in site.projects limit:3 %}
+            {% assign visible_projects = site.projects | where_exp: "project", "project.disabled != true" %}
+            {% for project in visible_projects limit:3 %}
             {% include project-card.html project=project %}
             {% endfor %}
         </div>
@@ -22,8 +23,8 @@ title: Home
         <div class="about-preview-grid">
             <div class="about-preview-content animate-on-scroll">
                 <h2 class="section-title">About Me</h2>
-                <p>I'm a Staff Backend Engineer with over 11 years of experience building scalable, high-performance systems. I specialize in JVM technologies including Java, Kotlin, and Scala, with deep expertise in frameworks like Dropwizard, Ktor, and Play.</p>
-                <p>My passion lies in designing elegant, maintainable backend architectures that solve complex problems. I'm currently focused on microservices, event-driven systems, and cloud-native applications.</p>
+                <p>I'm a Staff Software Engineer with over 11 years of experience building scalable, high-performance systems. I specialize in JVM technologies including Java, Kotlin, and Scala, with deep expertise in event-driven architectures and distributed systems.</p>
+                <p>Based in Missoula, Montana, I'm always open to remote opportunities where I can leverage my expertise in backend architecture and team leadership.</p>
                 <a href="{{ '/about/' | relative_url }}" class="btn outline">More About Me</a>
             </div>
             <div class="about-preview-stats animate-on-scroll">
@@ -32,12 +33,8 @@ title: Home
                     <span class="stat-label">Years Experience</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">20+</span>
-                    <span class="stat-label">Projects Completed</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">3</span>
-                    <span class="stat-label">JVM Languages</span>
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">Languages with Production Experience</span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number">∞</span>
@@ -52,7 +49,8 @@ title: Home
     <div class="container">
         <h2 class="section-title">Latest Posts</h2>
         <div class="posts-grid">
-            {% for post in site.posts limit:3 %}
+            {% assign visible_posts = site.posts | where_exp: "post", "post.disabled != true" %}
+            {% for post in visible_posts limit:3 %}
             {% include post-card.html post=post %}
             {% endfor %}
         </div>

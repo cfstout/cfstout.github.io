@@ -9,6 +9,7 @@ technologies: [Java, JavaFX, SQLite]
 github_url: https://github.com/cfstout/word-game
 demo_url: https://word-game-demo.com
 year: 2022
+disabled: true
 ---
 
 ## Project Overview
