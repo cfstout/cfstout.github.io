@@ -1,0 +1,71 @@
+---
+layout: default
+title: Home
+---
+
+<section class="featured-projects">
+    <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            {% assign visible_projects = site.projects | where_exp: "project", "project.disabled != true" %}
+            {% for project in visible_projects limit:3 %}
+            {% include project-card.html project=project %}
+            {% endfor %}
+        </div>
+        <div class="see-all">
+            <a href="{{ '/projects/' | relative_url }}" class="btn primary">View All Projects</a>
+        </div>
+    </div>
+</section>
+
+<section class="about-preview">
+    <div class="container">
+        <div class="about-preview-grid">
+            <div class="about-preview-content animate-on-scroll">
+                <h2 class="section-title">About Me</h2>
+                <p>I'm a Staff Software Engineer with over 11 years of experience building scalable, high-performance systems. I specialize in JVM technologies including Java, Kotlin, and Scala, with deep expertise in event-driven architectures and distributed systems.</p>
+                <p>Based in Missoula, Montana, I'm always open to remote opportunities where I can leverage my expertise in backend architecture and team leadership.</p>
+                <a href="{{ '/about/' | relative_url }}" class="btn outline">More About Me</a>
+            </div>
+            <div class="about-preview-stats animate-on-scroll">
+                <div class="stat-card">
+                    <span class="stat-number">11+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">Languages with Production Experience</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">Curiosity</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="latest-posts">
+    <div class="container">
+        <h2 class="section-title">Latest Posts</h2>
+        <div class="posts-grid">
+            {% assign visible_posts = site.posts | where_exp: "post", "post.disabled != true" %}
+            {% for post in visible_posts limit:3 %}
+            {% include post-card.html post=post %}
+            {% endfor %}
+        </div>
+        <div class="see-all">
+            <a href="{{ '/blog/' | relative_url }}" class="btn secondary">Read All Posts</a>
+        </div>
+    </div>
+</section>
+
+<section class="contact-cta">
+    <div class="container">
+        <div class="cta-content animate-on-scroll">
+            <h2>Let's Work Together</h2>
+            <p>Looking for a backend expert to help with your next project? I'm currently open to discussing new opportunities.</p>
+            <a href="mailto:{{ site.email }}" class="btn primary">Get In Touch</a>
+        </div>
+    </div>
+</section>

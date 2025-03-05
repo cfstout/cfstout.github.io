@@ -1,0 +1,20 @@
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": "{{ include.project.title }}",
+        "description": "{{ include.project.description }}",
+        "author": {
+            "@type": "Person",
+            "name": "Clayton Stout",
+            "url": "https://cfstout.github.io"
+        },
+        "dateCreated": "{{ include.project.year }}",
+        "codeRepository": "{{ include.project.github_url }}",
+        "programmingLanguage": [
+            {% for tech in include.project.technologies %}
+            "{{ tech }}"{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+        ]
+    }
+</script>

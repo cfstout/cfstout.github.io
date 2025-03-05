@@ -1,0 +1,11 @@
+<div class="post-card">
+    <div class="post-date">{{ include.post.date | date: "%B %-d, %Y" }}</div>
+    <h3><a href="{{ include.post.url | relative_url }}">{{ include.post.title }}</a></h3>
+    <p>{{ include.post.excerpt | strip_html | truncatewords: 25 }}</p>
+    <div class="post-tags">
+        {% for category in include.post.categories %}
+        <span class="tag">{{ category }}</span>
+        {% endfor %}
+    </div>
+    <a href="{{ include.post.url | relative_url }}" class="read-more">Read More <span class="arrow">→</span></a>
+</div>

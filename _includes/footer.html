@@ -1,7 +1,44 @@
-<footer class="site-footer">
-    <p>&copy; 2025 Clayton Stout. All Rights Reserved.</p>
-    <div class="social-links">
-        <a href="{{ site.social.github }}"><i class="fab fa-github"></i> GitHub</a>
-        <a href="{{ site.social.linkedin }}"><i class="fab fa-linkedin"></i> LinkedIn</a>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <span class="logo-text">CS</span>
+                    </div>
+                    <p>Passionate about building scalable backend systems and solving complex engineering challenges.</p>
+                </div>
+
+                <div class="footer-nav">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                        <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+                        <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
+                        <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-connect">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/cfstout" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/claytonjstout" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:{{ site.email }}" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; {{ site.time | date: '%Y' }} Clayton Stout. All rights reserved.</p>
+                <p class="built-with">Built with <span class="heart">♥</span> using Jekyll and GitHub Pages</p>
+            </div>
+        </div>
     </div>
 </footer>

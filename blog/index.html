@@ -1,0 +1,85 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+---
+
+<div class="blog-header">
+    <div class="container">
+        <h1>Blog</h1>
+        <p>Thoughts, tutorials, and insights on JVM technologies and backend development</p>
+    </div>
+</div>
+
+<section class="blog-section">
+    <div class="container">
+        <div class="blog-filters">
+            <span class="filter-label">Filter by:</span>
+            <div class="category-filters">
+                {% assign visible_posts = site.posts | where_exp: "post", "post.disabled != true" %}
+                {% assign categories = visible_posts | map: "categories" | compact | uniq | sort %}
+                <button class="filter-btn active" data-filter="all">All</button>
+                {% for category in categories %}
+                <button class="filter-btn" data-filter="{{ category | slugify }}">{{ category }}</button>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="posts-grid">
+            {% for post in visible_posts %}
+            <div class="post-item" data-categories="{{ post.categories | join: ' ' | downcase }}">
+                {% include post-card.html post=post %}
+            </div>
+            {% endfor %}
+        </div>
+
+        {% if paginator.total_pages > 1 %}
+        <div class="pagination">
+            {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Prev</a>
+            {% endif %}
+
+            {% for page in (1..paginator.total_pages) %}
+            {% if page == paginator.page %}
+            <span class="current">{{ page }}</span>
+            {% elsif page == 1 %}
+            <a href="{{ '/blog/' | relative_url }}">{{ page }}</a>
+            {% else %}
+            <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+            {% endif %}
+            {% endfor %}
+
+            {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const postItems = document.querySelectorAll('.post-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+
+                // Get filter value
+                const filterValue = this.dataset.filter.toLowerCase();
+
+                // Filter posts
+                postItems.forEach(item => {
+                    if (filterValue === 'all' || item.dataset.categories.includes(filterValue)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+</script>

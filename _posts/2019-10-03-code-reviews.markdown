@@ -2,6 +2,7 @@
 layout: post
 title:  "My Code Reviews"
 date:   2019-10-03 10:23:57 -0600
+disabled: true
 ---
 
 I enjoy giving code reviews, as I think it’s one of the best ways to learn and teach in our industry. I know that you may not feel quite the same, so I’m including a decoding guide so you (hopefully) have a clear sense of my intention behind any comments, and know exactly which require action. 
