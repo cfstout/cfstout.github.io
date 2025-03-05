@@ -1,15 +1,59 @@
-<header class="site-header">
-    <div class="logo">
-        <a href="{{ '/' | relative_url }}">
-            {{ site.title }}
-        </a>
-    </div>
-    <nav class="main-nav">
-        <ul>
-            <li><a href="{{ '/' | relative_url }}">Home</a></li>
-            <li><a href="{{ '/about' | relative_url }}">About Me</a></li>
-            <li><a href="{{ '/projects' | relative_url }}">Projects</a></li>
-            <li><a href="{{ '/blog' | relative_url }}">Blog</a></li>
-        </ul>
+<header>
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="{{ '/' | relative_url }}">
+                    <span class="logo-text">CS</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
+                <li><a href="{{ '/about/' | relative_url }}" {% if page.url contains '/about/' %}class="active"{% endif %}>About</a></li>
+                <li><a href="{{ '/projects/' | relative_url }}" {% if page.url contains '/projects/' %}class="active"{% endif %}>Projects</a></li>
+                <li><a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog/' %}class="active"{% endif %}>Blog</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </nav>
+
+    {% if page.url == '/' %}
+    <div class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hi, I'm <span class="highlight">Clayton Stout</span></h1>
+                    <h2>Staff Backend Engineer</h2>
+                    <p>Crafting robust JVM-based systems and microservices architecture for over a decade</p>
+                    <div class="cta-buttons">
+                        <a href="{{ '/projects/' | relative_url }}" class="btn primary">View Projects</a>
+                        <a href="{{ '/about/' | relative_url }}" class="btn secondary">About Me</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-container">
+                        <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Clayton Stout" class="profile-image">
+                        <div class="tech-badges">
+                            <span class="badge java">Java</span>
+                            <span class="badge kotlin">Kotlin</span>
+                            <span class="badge scala">Scala</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg">
+            <div class="hero-shape"></div>
+        </div>
+    </div>
+    {% endif %}
 </header>

@@ -1,0 +1,73 @@
+---
+layout: default
+title: Home
+---
+
+<section class="featured-projects">
+    <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            {% for project in site.projects limit:3 %}
+            {% include project-card.html project=project %}
+            {% endfor %}
+        </div>
+        <div class="see-all">
+            <a href="{{ '/projects/' | relative_url }}" class="btn primary">View All Projects</a>
+        </div>
+    </div>
+</section>
+
+<section class="about-preview">
+    <div class="container">
+        <div class="about-preview-grid">
+            <div class="about-preview-content animate-on-scroll">
+                <h2 class="section-title">About Me</h2>
+                <p>I'm a Staff Backend Engineer with over 11 years of experience building scalable, high-performance systems. I specialize in JVM technologies including Java, Kotlin, and Scala, with deep expertise in frameworks like Dropwizard, Ktor, and Play.</p>
+                <p>My passion lies in designing elegant, maintainable backend architectures that solve complex problems. I'm currently focused on microservices, event-driven systems, and cloud-native applications.</p>
+                <a href="{{ '/about/' | relative_url }}" class="btn outline">More About Me</a>
+            </div>
+            <div class="about-preview-stats animate-on-scroll">
+                <div class="stat-card">
+                    <span class="stat-number">11+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">JVM Languages</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">Curiosity</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="latest-posts">
+    <div class="container">
+        <h2 class="section-title">Latest Posts</h2>
+        <div class="posts-grid">
+            {% for post in site.posts limit:3 %}
+            {% include post-card.html post=post %}
+            {% endfor %}
+        </div>
+        <div class="see-all">
+            <a href="{{ '/blog/' | relative_url }}" class="btn secondary">Read All Posts</a>
+        </div>
+    </div>
+</section>
+
+<section class="contact-cta">
+    <div class="container">
+        <div class="cta-content animate-on-scroll">
+            <h2>Let's Work Together</h2>
+            <p>Looking for a backend expert to help with your next project? I'm currently open to discussing new opportunities.</p>
+            <a href="mailto:{{ site.email }}" class="btn primary">Get In Touch</a>
+        </div>
+    </div>
+</section>

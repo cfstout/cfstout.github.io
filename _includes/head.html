@@ -1,18 +1,31 @@
-<!-- Character encoding & viewport -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-<!-- Page title -->
-<title>
-    {% if page.title %}
-    {{ page.title }} | {{ site.title }}
-    {% else %}
-    {{ site.title }}
-    {% endif %}
-</title>
+<!-- Favicon and site icons -->
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicons/apple-touch-icon.png' | relative_url }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicons/favicon-32x32.png' | relative_url }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicons/favicon-16x16.png' | relative_url }}">
+<link rel="manifest" href="{{ '/assets/favicons/site.webmanifest' | relative_url }}">
+<link rel="mask-icon" href="{{ '/assets/favicons/safari-pinned-tab.svg' | relative_url }}" color="#4361ee">
+<meta name="msapplication-TileColor" content="#4361ee">
+<meta name="theme-color" content="#ffffff">
 
-<!-- Optionally use jekyll-seo-tag plugin for better SEO -->
-{% seo %}
+<!-- Stylesheets -->
+<link rel="stylesheet" href="{{ '/assets/css/normalize.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+{% if page.custom_css %}
+{% for stylesheet in page.custom_css %}
+<link rel="stylesheet" href="{{ '/assets/css/' | append: stylesheet | append: '.css' | relative_url }}">
+{% endfor %}
+{% endif %}
 
-<!-- Link to your stylesheet -->
-<link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}">
+<!-- Preload critical fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+
+<!-- SEO -->
+{% seo title=false %}

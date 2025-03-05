@@ -1,6 +1,15 @@
 # Personal Portfolio & Blog
 
-This is the source code for my personal portfolio and blog, built with **Jekyll** and hosted on **GitHub Pages**.
+Personal portfolio website built with Jekyll and hosted on GitHub Pages. Visit the live site at [cfstout.github.io](https://cfstout.github.io).
+
+## Features
+
+- Responsive design with modern CSS techniques
+- Dark/light mode toggle with preferences saved to localStorage
+- Project showcase with detailed case studies
+- Technical blog with category filtering
+- Contact form using Formspree
+- SEO optimized with proper metadata and sitemap
 
 ---
 
@@ -36,53 +45,50 @@ The site should now be available at **http://localhost:4000/**.
 
 ---
 
-## 📝 Adding a New Blog Post
+## Adding Content
 
-### 1. Create a New Markdown File in `_posts/`
-Each blog post follows the naming convention:
-```
-_posts/YYYY-MM-DD-title.md
-```
-Example:
-```bash
-touch _posts/2025-03-03-my-new-blog-post.md
+### Adding a New Project
+
+Create a new markdown file in the `_projects` directory:
+
+```markdown
+---
+layout: project
+title: Project Title
+description: Brief project description
+thumbnail: /assets/images/projects/thumbnail.jpg
+featured_image: /assets/images/projects/featured.jpg
+categories: [category]
+technologies: [tech1, tech2, tech3]
+github_url: https://github.com/username/project
+demo_url: https://demo-url.com
+year: 2025
+---
+
+Project content goes here...
 ```
 
-### 2. Add Front Matter
-Inside the new Markdown file, include front matter at the top:
-```yaml
+### Adding a New Blog Post
+
+Create a new markdown file in the `_posts` directory with the filename format `YYYY-MM-DD-title.md`:
+
+```markdown
 ---
 layout: post
-title: "My New Blog Post"
-date: 2025-03-03
-tags: [jekyll, blog]
+title: "Post Title"
+date: 2025-02-15
+categories: [Category1, Category2]
+excerpt: Brief excerpt that appears in listings.
 ---
+
+Post content goes here...
 ```
 
-### 3. Write Your Content
-After the front matter, add your post content in Markdown.
+---
 
-Example:
-```markdown
-## This is My Blog Post
+## Deployment
 
-This is a paragraph of text about my blog post. I can include code snippets like this:
-
-```ruby
-def hello_world
-  puts "Hello, world!"
-end
-```
-```
-
-### 4. Test Locally
-Before pushing your changes, preview them:
-```bash
-bundle exec jekyll serve
-```
-
-### 5. Push to GitHub
-Your blog post should be live on GitHub Pages shortly after.
+This site is automatically deployed to GitHub Pages when changes are pushed to the `main` branch.
 
 ---
 

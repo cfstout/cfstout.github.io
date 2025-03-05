@@ -1,0 +1,56 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+---
+
+<div class="projects-header">
+    <div class="container">
+        <h1>My Projects</h1>
+        <p>A collection of personal and professional projects showcasing my technical expertise</p>
+    </div>
+</div>
+
+<section class="projects-section">
+    <div class="container">
+        <div class="projects-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="app">Apps</button>
+            <button class="filter-btn" data-filter="game">Games</button>
+            <button class="filter-btn" data-filter="library">Libraries</button>
+        </div>
+
+        <div class="projects-grid">
+            {% for project in site.projects %}
+            {% include project-card.html project=project %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+
+                // Get filter value
+                const filterValue = this.dataset.filter;
+
+                // Filter projects
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.classList.contains(`category-${filterValue}`)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+</script>

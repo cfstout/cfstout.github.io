@@ -1,0 +1,77 @@
+---
+layout: default
+body_class: project-template
+---
+
+<header>
+    <div class="project-header">
+        <div class="container">
+            <h1>{{ page.title }}</h1>
+            <p>{{ page.description }}</p>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="project-content container">
+        {% if page.featured_image %}
+        <div class="project-image">
+            <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}">
+        </div>
+        {% endif %}
+
+        <div class="project-meta">
+            {% if page.technologies %}
+            <div class="meta-item">
+                <h4>Technologies</h4>
+                <p>{{ page.technologies | join: ", " }}</p>
+            </div>
+            {% endif %}
+
+            {% if page.year %}
+            <div class="meta-item">
+                <h4>Year</h4>
+                <p>{{ page.year }}</p>
+            </div>
+            {% endif %}
+
+            {% if page.github_url %}
+            <div class="meta-item">
+                <h4>GitHub</h4>
+                <p><a href="{{ page.github_url }}" target="_blank" rel="noopener">View Code <i class="fas fa-external-link-alt fa-xs"></i></a></p>
+            </div>
+            {% endif %}
+
+            {% if page.demo_url %}
+            <div class="meta-item">
+                <h4>Live Demo</h4>
+                <p><a href="{{ page.demo_url }}" target="_blank" rel="noopener">Visit Site <i class="fas fa-external-link-alt fa-xs"></i></a></p>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="project-description">
+            {{ content }}
+        </div>
+
+        <div class="project-nav">
+            <div class="container">
+                <div class="nav-links">
+                    {% if page.previous %}
+                    <a href="{{ page.previous.url | relative_url }}" class="prev">
+                        <span>Previous Project</span>
+                        <h4>{{ page.previous.title }}</h4>
+                    </a>
+                    {% endif %}
+
+                    {% if page.next %}
+                    <a href="{{ page.next.url | relative_url }}" class="next">
+                        <span>Next Project</span>
+                        <h4>{{ page.next.title }}</h4>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

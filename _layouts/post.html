@@ -1,13 +1,59 @@
 ---
 layout: default
+body_class: post-template
 ---
 
-<article class="blog-post">
-    <h1>{{ page.title }}</h1>
-    <p class="post-meta">
-        {{ page.date | date_to_long_string }}
-    </p>
-    <div class="post-content">
-        {{ content }}
+<div class="post-header">
+    <div class="container">
+        <h1>{{ page.title }}</h1>
+        <div class="post-meta">
+            <div class="post-date">{{ page.date | date: "%B %-d, %Y" }}</div>
+            {% if page.categories %}
+            <div class="post-tags">
+                {% for category in page.categories %}
+                <span class="tag">{{ category }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
     </div>
-</article>
+</div>
+
+<main>
+    <article class="post-content container">
+        {{ content }}
+
+        <div class="blog-post-footer">
+            <div class="author-section">
+                <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Clayton Stout" class="author-image">
+                <div class="author-info">
+                    <h4>Written by Clayton Stout</h4>
+                    <p>Staff Backend Engineer specializing in JVM technologies with 11+ years of industry experience.</p>
+                </div>
+            </div>
+
+            <div class="share-links">
+                <span>Share this post:</span>
+                <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url }}{{ page.url | url_encode }}" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url | url_encode }}" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+
+            {% if page.comments %}
+            <div class="comments-section">
+                <h3>Comments</h3>
+                <!-- Add your preferred comment system here -->
+            </div>
+            {% endif %}
+        </div>
+    </article>
+
+    <div class="container more-posts">
+        <h3>More Articles</h3>
+        <div class="posts-grid">
+            {% assign related_posts = site.posts | where_exp:"post", "post.url != page.url" | sample:2 %}
+            {% for post in related_posts %}
+            {% include post-card.html post=post %}
+            {% endfor %}
+        </div>
+    </div>
+</main>
