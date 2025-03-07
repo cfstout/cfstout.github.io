@@ -1,0 +1,72 @@
+---
+layout: post
+custom_css: ["book-review"]
+custom_js: ["book-review"]
+---
+
+<div class="book-review">
+    <div class="book-info">
+        <div class="book-cover">
+            {% if page.book_cover %}
+            <img src="{{ page.book_cover | relative_url }}" alt="Cover of {{ page.book_title }}">
+            {% else %}
+            <div class="placeholder-cover">
+                <i class="fas fa-book"></i>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="book-details">
+            <h2>{{ page.book_title }}</h2>
+            <p class="book-author">by {{ page.book_author }}</p>
+
+            <div class="book-metadata">
+                {% if page.book_published %}
+                <div class="metadata-item">
+                    <span class="label">Published:</span>
+                    <span class="value">{{ page.book_published }}</span>
+                </div>
+                {% endif %}
+
+                {% if page.book_pages %}
+                <div class="metadata-item">
+                    <span class="label">Pages:</span>
+                    <span class="value">{{ page.book_pages }}</span>
+                </div>
+                {% endif %}
+
+                {% if page.book_genre %}
+                <div class="metadata-item">
+                    <span class="label">Genre:</span>
+                    <span class="value">{{ page.book_genre }}</span>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="book-rating">
+                <span class="label">My Rating:</span>
+                <div class="rating-value">
+                    {% case page.book_rating %}
+                    {% when "highly_recommend" %}
+                    <span class="rating highly-recommend">Highly Recommend</span>
+                    {% when "recommend" %}
+                    <span class="rating recommend">Recommend</span>
+                    {% when "do_not_recommend" %}
+                    <span class="rating do-not-recommend">Do Not Recommend</span>
+                    {% endcase %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="book-review-content">
+        {{ content }}
+    </div>
+
+    {% if page.next_book %}
+    <div class="next-book-teaser">
+        <h3>Next on my reading list</h3>
+        <a href="{{ page.next_book_url | relative_url }}">{{ page.next_book }}</a>
+    </div>
+    {% endif %}
+</div>

@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="{{ '/assets/css/normalize.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    {% if page.custom_css %}
-    {% for stylesheet in page.custom_css %}
+    {% if page.custom_css or layout.custom_css %}
+    {% assign stylesheets = page.custom_css | default: layout.custom_css %}
+    {% for stylesheet in stylesheets %}
     <link rel="stylesheet" href="{{ '/assets/css/' | append: stylesheet | append: '.css' | relative_url }}">
     {% endfor %}
     {% endif %}
@@ -34,8 +35,9 @@
 {% include footer.html %}
 
 <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
-{% if page.custom_js %}
-{% for js_file in page.custom_js %}
+{% if page.custom_js or layout.custom_js %}
+{% assign js_files = page.custom_js | default: layout.custom_js %}
+{% for js_file in js_files %}
 <script src="{{ '/assets/js/' | append: js_file | append: '.js' | relative_url }}"></script>
 {% endfor %}
 {% endif %}

@@ -34,7 +34,7 @@ body_class: post-template
 
             <div class="share-links">
                 <span>Share this post:</span>
-                <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url }}{{ page.url | url_encode }}" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://x.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url }}{{ page.url | url_encode }}" target="_blank"><i class="fab fa-x"></i></a>
                 <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url | url_encode }}" target="_blank"><i class="fab fa-linkedin"></i></a>
             </div>
 
@@ -50,7 +50,8 @@ body_class: post-template
     <div class="container more-posts">
         <h3>More Articles</h3>
         <div class="posts-grid">
-            {% assign related_posts = site.posts | where_exp:"post", "post.url != page.url" | sample:2 %}
+            {% assign visible_posts = site.posts | where_exp:"post", "post.disabled != true" %}
+            {% assign related_posts = visible_posts | where_exp:"post", "post.url != page.url" | sample:2 %}
             {% for post in related_posts %}
             {% include post-card.html post=post %}
             {% endfor %}
