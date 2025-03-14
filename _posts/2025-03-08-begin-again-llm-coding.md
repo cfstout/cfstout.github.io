@@ -4,7 +4,6 @@ title: "The \"Begin Again\" Method: Getting the Most Out of LLM Coding Assistant
 date: 2025-03-08
 categories: [Coding, AI, Best Practices]
 excerpt: "A practical approach to working with AI coding assistants that embraces iteration and starting fresh with better prompts."
-image: "/assets/images/begin-again-method.svg"
 ---
 
 In the year or so since ChatGPT and other LLM coding assistants have hit the mainstream, I've noticed a pattern in how I use these tools most effectively. After many projects where I've paired with these AI assistants, I've developed what I call the "Begin Again" method—a surprisingly effective technique that embraces the iterative nature of working with LLMs.
