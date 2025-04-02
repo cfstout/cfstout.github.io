@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#f8f9fa" rx="8" ry="8"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Manrope, sans-serif" font-size="28" text-anchor="middle" fill="#2b2d42" font-weight="bold">Tendon Training Breakthrough</text>
+  
+  <!-- Left side - Figure showing muscle-tendon system -->
+  <g transform="translate(200, 200)">
+    <!-- Bone -->
+    <rect x="-90" y="-20" width="40" height="40" rx="5" ry="5" fill="#e5e7eb"/>
+    
+    <!-- Tendon -->
+    <path d="M-50,0 C-30,0 -30,40 0,40" stroke="#FFA726" stroke-width="8" fill="none"/>
+    
+    <!-- Muscle -->
+    <ellipse cx="40" cy="40" rx="40" ry="20" fill="#EF5350"/>
+    
+    <!-- Labels -->
+    <text x="-70" y="-30" font-family="Manrope, sans-serif" font-size="14" text-anchor="middle" fill="#8d99ae">Bone</text>
+    <text x="-20" y="20" font-family="Manrope, sans-serif" font-size="14" text-anchor="middle" fill="#8d99ae">Tendon</text>
+    <text x="40" y="75" font-family="Manrope, sans-serif" font-size="14" text-anchor="middle" fill="#8d99ae">Muscle</text>
+    
+    <!-- Force transmission arrows -->
+    <path d="M-90,80 L90,80" stroke="#4361ee" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="0" y="100" font-family="Manrope, sans-serif" font-size="12" text-anchor="middle" fill="#4361ee">Force Transmission</text>
+    
+    <!-- Chain -->
+    <text x="0" y="-60" font-family="Manrope, sans-serif" font-size="16" text-anchor="middle" fill="#2b2d42" font-weight="bold">The Strength Chain</text>
+    <text x="0" y="-40" font-family="Manrope, sans-serif" font-size="12" text-anchor="middle" fill="#8d99ae">Strong as its weakest link</text>
+  </g>
+  
+  <!-- Right side - Strength Graph -->
+  <g transform="translate(600, 200)">
+    <!-- Graph container -->
+    <rect x="-150" y="-100" width="300" height="200" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    
+    <!-- Axes -->
+    <line x1="-150" y1="100" x2="150" y2="100" stroke="#8d99ae" stroke-width="1"/>
+    <line x1="-150" y1="100" x2="-150" y2="-100" stroke="#8d99ae" stroke-width="1"/>
+    
+    <!-- Axis labels -->
+    <text x="0" y="120" font-family="Manrope, sans-serif" font-size="12" text-anchor="middle" fill="#8d99ae">Time (Weeks)</text>
+    <text x="-170" y="0" font-family="Manrope, sans-serif" font-size="12" text-anchor="middle" fill="#8d99ae" transform="rotate(-90, -170, 0)">Overhead Press (lbs)</text>
+    
+    <!-- Data points: Plateau -->
+    <line x1="-150" y1="50" x2="-60" y2="45" stroke="#8d99ae" stroke-width="2"/>
+    <circle cx="-150" cy="50" r="3" fill="#8d99ae"/>
+    <circle cx="-120" cy="48" r="3" fill="#8d99ae"/>
+    <circle cx="-90" cy="46" r="3" fill="#8d99ae"/>
+    <circle cx="-60" cy="45" r="3" fill="#8d99ae"/>
+    
+    <!-- Vertical divider -->
+    <line x1="-30" y1="-90" x2="-30" y2="100" stroke="#8d99ae" stroke-width="1" stroke-dasharray="4,4"/>
+    <text x="-30" y="-80" font-family="Manrope, sans-serif" font-size="12" text-anchor="middle" fill="#4361ee">Tendon Training Started</text>
+    
+    <!-- Data points: Breakthrough -->
+    <path d="M-30,45 L0,25 L30,0 L60,-30" stroke="#4361ee" stroke-width="3" fill="none"/>
+    <circle cx="-30" cy="45" r="4" fill="#4361ee"/>
+    <circle cx="0" cy="25" r="4" fill="#4361ee"/>
+    <circle cx="30" cy="0" r="4" fill="#4361ee"/>
+    <circle cx="60" cy="-30" r="4" fill="#4361ee"/>
+    
+    <!-- Projection line -->
+    <path d="M60,-30 L100,-70" stroke="#4361ee" stroke-width="2" stroke-dasharray="5,5"/>
+    <circle cx="100" cy="-70" r="4" fill="#4361ee" stroke="#ffffff" stroke-width="1"/>
+    
+    <!-- Labels -->
+    <text x="100" y="-80" font-family="Manrope, sans-serif" font-size="12" text-anchor="middle" fill="#4361ee">Pre-injury Max</text>
+    
+    <!-- Title -->
+    <text x="0" y="-120" font-family="Manrope, sans-serif" font-size="16" text-anchor="middle" fill="#2b2d42" font-weight="bold">Strength Breakthrough</text>
+  </g>
+  
+  <!-- Exercise illustration -->
+  <g transform="translate(400, 340)">
+    <!-- Protocol -->
+    <rect x="-300" y="-20" width="600" height="40" rx="5" ry="5" fill="#e9ecef"/>
+    <text x="0" y="5" font-family="Manrope, sans-serif" font-size="14" text-anchor="middle" fill="#2b2d42">
+      3-10 second holds • 30-40% intensity • 1 per minute • 10 minutes daily
+    </text>
+  </g>
+  
+  <!-- Arrow markers definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4361ee"/>
+    </marker>
+  </defs>
+</svg>
