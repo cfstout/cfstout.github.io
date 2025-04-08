@@ -51,7 +51,7 @@ body_class: post-template
         <h3>More Articles</h3>
         <div class="posts-grid">
             {% assign visible_posts = site.posts | where_exp:"post", "post.disabled != true" %}
-            {% assign related_posts = visible_posts | where_exp:"post", "post.url != page.url" | sample:2 %}
+            {% assign related_posts = visible_posts | where_exp:"post", "post.url != page.url" | sample:3 %}
             {% for post in related_posts %}
             {% include post-card.html post=post %}
             {% endfor %}

@@ -11,6 +11,8 @@ book_pages: "368"
 book_genre: "Technology, History, Society"
 book_rating: "highly_recommend"
 book_cover: "/assets/images/books/nexus.jpg"
+next_book: "The Two Towers"
+next_book_url: "/books/fantasy/fiction/2025/04/03/what-im-reading-two-towers.html"
 ---
 
 ## Synopsis

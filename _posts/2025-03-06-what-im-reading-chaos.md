@@ -11,6 +11,8 @@ book_pages: "528"
 book_genre: "True Crime, History"
 book_rating: "do_not_recommend"
 book_cover: "/assets/images/books/chaos.jpg"
+next_book: "Nexus"
+next_book_url: "/books/technology/society/2025/03/30/what-im-reading-nexus.html"
 ---
 
 ## Synopsis
