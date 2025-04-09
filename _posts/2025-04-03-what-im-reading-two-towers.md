@@ -11,6 +11,8 @@ book_pages: "416"
 book_genre: "Fantasy, Epic Fiction"
 book_rating: "highly_recommend"
 book_cover: "/assets/images/books/two-towers.jpg"
+next_book: "Abundance"
+next_book_url: "/books/politics/economics/society/2025/04/08/what-im-reading-abundance.html"
 ---
 
 ## Synopsis
